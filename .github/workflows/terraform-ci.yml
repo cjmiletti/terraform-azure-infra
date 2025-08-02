@@ -33,6 +33,10 @@ jobs:
       - name: Create terraform.tfvars
         run: |
           cat <<EOF > terraform.tfvars
+          subscription_id   = "${{ secrets.SUBSCRIPTION_ID }}"
+          tenant_id         = "${{ secrets.TENANT_ID }}"
+          client_id         = "${{ secrets.CLIENT_ID }}"
+          client_secret     = "${{ secrets.CLIENT_SECRET }}"
           application_name  = "${{ secrets.TFVAR_APPLICATION_NAME }}"
           environment_name  = "${{ secrets.TFVAR_ENVIRONMENT_NAME }}"
           primary_location  = "${{ secrets.TFVAR_PRIMARY_LOCATION }}"
